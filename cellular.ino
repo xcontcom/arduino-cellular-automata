@@ -25,7 +25,8 @@ void setup() {
 		randomSeed(analogRead(0));
 		for(int x=0;x<xx;x++){
 			for(int y=0;y<yy;y++){
-				a[x][y]=0;//random(0,2);
+				a[x][y]=0;
+				//random(0,2); //use random instead
 			}
 		}
 		
@@ -35,9 +36,12 @@ void setup() {
 		a[4][3]=1;
 		a[5][4]=1;
 		
+		//use random instead of glider
+		/*
 		for(int i=0;i<18;i++){
-		//	r[i]=random(0,2);
+			r[i]=random(0,2);
 		}
+		*/
 		
 		for(int i=0;i<512;i++){
 			q=((i>>4)&1)*8;
@@ -46,25 +50,8 @@ void setup() {
 			}
 			rule[i]=r[q];
 		}
-	//	Serial.begin(9600);
-	/*
-		for(int i=0;i<512;i++){
-			Serial.print(rule[i]);
-		}
-	*/
 }
 void loop() {
-		/*
-		mx.clear();
-		delay(DELAYTIME);
-		for(int i=0;i<32;i++){
-			mx.setPoint(random(0,8),random(0,8),true);
-		}
-		delay(DELAYTIME);
-		*/
-		//mx.clear();
-		//mx.setPoint(random(0,8),random(0,8),true);
-		//mx.setPoint(random(0,8),random(0,8),false);
 		delay(DELAYTIME);
 		mx.clear();
 		int xm, xp, ym, yp;
@@ -96,7 +83,4 @@ void loop() {
 				a[x][y]=temp[x][y];
 			}
 		}
-//		Serial.println(array[0][0]);
-
-
 }
